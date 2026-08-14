@@ -1,0 +1,25 @@
+{
+  "name": "deployx-lite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-Powered Application Deployment & Environment Management Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@deployx/api & npm run dev --workspace=@deployx/web",
+    "dev:api": "npm run start:dev --workspace=@deployx/api",
+    "dev:web": "npm run dev --workspace=@deployx/web",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "db:generate": "npm run prisma:generate --workspace=@deployx/api",
+    "db:migrate": "npm run prisma:migrate --workspace=@deployx/api",
+    "db:seed": "npm run prisma:seed --workspace=@deployx/api",
+    "db:studio": "npm run prisma:studio --workspace=@deployx/api"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
