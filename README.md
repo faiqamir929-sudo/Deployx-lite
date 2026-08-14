@@ -89,7 +89,7 @@ npm run dev:web
 
 | URL | Description |
 |-----|-------------|
-| http://localhost:3000 | Web dashboard |
+| https://deploxlite.online/ | Web dashboard |
 | http://localhost:3001/api/docs | Swagger API docs |
 
 ### Demo Credentials (after seed)
