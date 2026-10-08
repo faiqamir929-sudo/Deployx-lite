@@ -149,6 +149,30 @@ At a minimum, local use requires:
 The API serves its OpenAPI/Swagger surface at `/docs` and a basic health
 response at `/api/healthz` when the API server is running. Authenticated
 workspace routes are listed in `lib/api-spec/openapi.yaml`.
+1. Clone & Install
+cd deployx-lite
+cp .env.example .env
+npm install
+2. Start Infrastructure
+With Docker:
+
+docker compose up postgres redis -d
+Without Docker: Run PostgreSQL and Redis locally and update .env.
+
+3. Database Setup
+# Set DATABASE_URL in apps/api/.env or root .env
+npm run db:generate
+npm run db:migrate
+npm run db:seed
+4. Run Development Servers
+# Terminal 1 — API (port 3001)
+npm run dev:api
+
+# Terminal 2 — Web (port 3000)
+npm run dev:web
+5. Open the App
+URL	Description
+https://deploxlite.online/	Web dashboard
 
 ## Security and data handling
 
