@@ -172,7 +172,7 @@ npm run dev:api
 npm run dev:web
 5. Open the App
 URL	Description
-https://deploxlite.online/	Web dashboard
+http://localhost:5173/	Web dashboard
 
 ## Security and data handling
 
