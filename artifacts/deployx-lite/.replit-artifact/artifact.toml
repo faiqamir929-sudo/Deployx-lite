@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "DeployX Lite"
+description = "An AI-powered deployment assistant for small development teams. Manage projects, environment variables, simulated build pipelines, and deployment history from one focused workspace."
+version = "1.0.0"
+id = "artifacts/deployx-lite"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20956
+
+[services.development]
+run = "pnpm --filter @workspace/deployx-lite run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/deployx-lite", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/deployx-lite/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20956"
+BASE_PATH = "/"

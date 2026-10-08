@@ -1,46 +1,65 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
+# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Build
-dist/
-build/
-.next/
-out/
+# platform/workspace files (not part of the project source)
+.replit
+.replitignore
+replit.md
+.agents/
+.local/
+/test-results/
+/playwright-report/
+.config/
+attached_assets/
 
-# Environment
+# compiled output
+dist
+tmp
+out-tsc
+*.tsbuildinfo
+.expo
+.expo-shared
+
+# dependencies
+node_modules
+
+# local secrets
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# Logs
-logs/
-*.log
-npm-debug.log*
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# OS
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
 .DS_Store
 Thumbs.db
 
-# Testing
-coverage/
-.nyc_output/
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
 
-# Prisma
-apps/api/prisma/migrations/**/migration_lock.toml
-
-# Storage
-storage/
-uploads/
-
-# Docker volumes
-postgres_data/
-redis_data/
-minio_data/
+# Replit
+.cache/
+.local/
